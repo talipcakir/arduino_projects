@@ -12,3 +12,6 @@ void loop() {
   digitalWrite(13,LOW);
   delay(2000);
 }
+//This code is the first working test code for arduino. 
+//it only turns the internal light on and off. 
+//This led is controlled by pin 13.
