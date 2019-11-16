@@ -1,0 +1,14 @@
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(13,OUTPUT);
+  //pin mode [pin number,pin system(in out input_pull)]
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  //same HIGH = 1 // LOW = 0
+  digitalWrite(13,HIGH);
+  delay(2000);
+  digitalWrite(13,LOW);
+  delay(2000);
+}
