@@ -1,5 +1,5 @@
 #include <Wire.h> 
-#include <LiquidCrystal_I2C.h>  // I2C kütüphanesini verdiğim linkten indirip   include edebilirsiniz
+#include <LiquidCrystal_I2C.h>  // I2C lib
 
 // Define Trig and Echo pin:
 #define trigPin 2
@@ -12,7 +12,7 @@ LiquidCrystal_I2C lcd(0x27,16,2);
 
 void setup()
 {
- lcd.begin();                      // LCD yi başlatma
+ lcd.begin();                      // LCD start
   // Define inputs and outputs:
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
@@ -22,7 +22,7 @@ void setup()
 }
 void loop()
 {
-   lcd.backlight();     // lcd nin arka ışıgını açar
+   lcd.backlight();
    lcd.setCursor(0,0);
    lcd.print("Start System!");
    lcd.setCursor(0,1);
