@@ -1,8 +1,11 @@
 #include <Keypad.h>
 #include <Wire.h> 
-#include <LiquidCrystal_I2C.h>
+#include <LiquidCrystal_I2C.h> 
 #include <Password.h>
+
+//Libraries Download:
 //https://github.com/talipcakir/Arduino_Libraries
+
 LiquidCrystal_I2C lcd(0x27,16,2); 
 char newPasswordString; //hold the new password
 char newPassword[4]; //character string of newPasswordString
@@ -34,6 +37,8 @@ void setup()
 {
 
   lcd.begin();
+  lcd.print("Welcome");
+  delay(2000);
   mainScreen();
 }
 
@@ -71,6 +76,8 @@ void activate() {
    } else {
       lcd.clear();
       lcd.print("Wrong Password!");
+      delay(1000);
+      asm volatile ("  jmp 0"); //restart code
       mainScreen();
    } 
 }
@@ -85,6 +92,7 @@ void deactivate(){
       lcd.clear();
       lcd.print("Wrong Password!");
       delay(1000);
+      asm volatile ("  jmp 0"); //restart code
       mainScreen();
    } 
 }
@@ -93,6 +101,4 @@ void mainScreen(){
   lcd.clear();
   lcd.print("Enter Pin:");
   keypad.getKey();
-
-
 }
