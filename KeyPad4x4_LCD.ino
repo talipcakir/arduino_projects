@@ -1,6 +1,6 @@
 #include <Keypad.h>
 #include <Wire.h> 
-#include <LiquidCrystal_I2C.h>  // I2C kütüphanesini verdiğim linkten indirip   include edebilirsiniz
+#include <LiquidCrystal_I2C.h>
 #include <Password.h>
 //https://github.com/talipcakir/Arduino_Libraries
 LiquidCrystal_I2C lcd(0x27,16,2); 
